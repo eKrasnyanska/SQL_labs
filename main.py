@@ -38,7 +38,7 @@ except cx_Oracle.DatabaseError:
     exit(0)
 
 cursor = my_con.cursor()
-cursor.execute(query3)
+
 for query in list_query:
     cursor = my_con.cursor()
     cursor.execute(query)
