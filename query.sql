@@ -1,5 +1,5 @@
 --task 1
-select company_name as company, count(company_film.company_company_name) as quantity_films
+select company_name as company, count(film_name) as quantity_films
 from company
     join company_film
     on company.company_name = company_film.company_company_name
@@ -9,12 +9,10 @@ where film.score > 6.5
 group by company_name;
 
 --task2
-select genre_name as genres, count(film_genre.genre_genre_name) as quantity_genres
+select genre_name as genres, count(genre_name) as quantity_genres
 from genre
-    left join film_genre
-    on genre.genre_name = film_genre.genre_genre_name
-    left join film
-    on film.film_name = film_genre.film_film_name
+    join film_genre
+    on genre.genre_name = film_genre.genre_genre_name    
 group by genre_name;
 
 --task3
