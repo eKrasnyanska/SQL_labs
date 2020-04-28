@@ -10,7 +10,7 @@ def fileId_from_url(url):
     raw_fileId = re.findall("~[A-z.]+/[0-9]+", url)[0][1: ]
     return raw_fileId.replace('/', ':')
 
-chart_studio.tools.set_credentials_file(username='liza.krasnyaskaya', api_key='0zvGP3Qzevux7cfZmJCf')
+chart_studio.tools.set_credentials_file(username='liza.krasnyaskaya', api_key='hBkq8X3Nk61W5JuVfvQy')
 
 login = 'kras'
 password = 'kras'
@@ -72,7 +72,7 @@ layout1 = go.Layout(
 )
 fig1 = go.Figure(data=trace1, layout=layout1)
 # fig1.write_html('genres.html', auto_open=True)
-genres_sum = py.plot(fig1, filename='genres_sum')
+genres_sum1 = py.plot(fig1, filename='genres_sum1')
 
 trace2 = go.Pie(
     labels = list_x_y[0],
@@ -83,7 +83,7 @@ layout2 = go.Layout(
 )
 fig2 = go.Figure(data=trace2, layout=layout2)
 # fig2.write_html('best.html', auto_open=True)
-best_comp = py.plot(fig2, filename='best_company')
+best_comp1 = py.plot(fig2, filename='best_company1')
 
 trace3 = go.Scatter(
     x = list_x_y[4],
@@ -96,12 +96,12 @@ layout3 = go.Layout(
 )
 fig3 = go.Figure(data=[trace3], layout=layout3)
 # fig3.write_html('films.html', auto_open=True)
-film_quantity = py.plot(fig3, filename='film_quantity')
+film_quantity1 = py.plot(fig3, filename='film_quantity1')
 
 my_dboard = dashboard.Dashboard()
-genres_sum_id = fileId_from_url(genres_sum)
-best_comp_id = fileId_from_url(best_comp)
-film_quantity_id = fileId_from_url(film_quantity)
+genres_sum_id = fileId_from_url(genres_sum1)
+best_comp_id = fileId_from_url(best_comp1)
+film_quantity_id = fileId_from_url(film_quantity1)
 
 box1 = {
     'type': 'box',
